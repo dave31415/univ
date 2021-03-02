@@ -1,3 +1,7 @@
+# Example of a mostly complete file
+# Not perfect but aa reasonable amount of added code for 15-20 min
+
+
 from csv import DictReader
 from collections import Counter
 

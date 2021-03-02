@@ -1,3 +1,7 @@
+# A started code file with some pieces to be added
+# candidate starts with this and can see a running example of the other
+
+
 def count_countries(data):
     # return a dictionary country -> count, FINISH
     return {}
