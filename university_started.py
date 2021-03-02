@@ -2,16 +2,6 @@
 # candidate starts with this and can see a running example of the other
 
 
-def count_countries(data):
-    # return a dictionary country -> count, FINISH
-    return {}
-
-
-def more_males(male_female_ratio_string):
-    # Return true if more males than  females, FINISH
-    return True
-
-
 def run():
     # get the data as a list of dictionaries
     data = None
