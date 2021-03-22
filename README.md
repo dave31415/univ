@@ -7,9 +7,7 @@ It first shows them a count of universities by country
 and asks them to choose a country.
 
 Then it asks them whether they prefer a university with more 
-males or more females or do not care. (TODO, perhaps change 
-this to use some other measure rather than
-the traditional gender choice)
+graduate students or more undergraduates or do not care. 
 
 Then it prompts them about which of the three scores to rank by:
 teaching, international, or research. 
@@ -25,7 +23,6 @@ purposes are clear and documented but not yet implemented in the incomplete
 file. There is also one undesirable feature / bug that the candidate 
 should find and fix, time permitting.
 
-The code runs in any Python 3 and does not use and does not need any 
-libraries. The candidate should not use any libraries other than those in the
-builtin python standard lib.
-
+The code runs in any Python 3 as well as Python 2.7 and does not use and 
+does not need any libraries. The candidate should not use any libraries 
+other than those in the builtin python standard lib.
