@@ -44,7 +44,8 @@ also looking for their familiarity with Python and it's syntax.
 
 The version we give them will have the university_finished.py and test.py files 
 removed and should have a Readme file without this subheading. So they have just
-university_incomplete.py, test_incomplete.py and university_data.csv.
+university_incomplete.py, test_incomplete.py and university_data.csv and an 
+abbreviated (this section removed) version of the Readme.
 
 They should not get this code in advance.
 
@@ -63,7 +64,7 @@ are probably already failing the interview.
 
 * Have them complete the work in the allotted time. If they need a little more time
 and (more importantly) you need more time to evaluate them, they can gave an extra 
-5 minutes.
+5 minutes. Be sure to note this as well.
 
 Things to look for:
 
@@ -84,8 +85,8 @@ notice the two missing functions and realize they need to be implemented.
 are familiar with the "Counter" object from the collections library but it's not 
 required.
 
-* If they finish this function, how do they test it. Have they noticed the test 
-program by now? Do they at least test it in the python shell.
+* If they finish this function, how do they test it? Have they noticed the test 
+program by now? Did they run it? Do they at least test it in the python shell?
 
 * The other function sort_by_chosen_score should basically be a one-liner. 
 
