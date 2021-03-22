@@ -15,7 +15,7 @@ def read_university():
 
     filename = "university_data.csv"
 
-    for row in DictReader(open(filename, 'r'))
+    for row in DictReader(open(filename, 'r')):
         if row['country'] == 'United States of America':
             row['country'] = 'US'
 
@@ -25,7 +25,7 @@ def read_university():
 def count_countries(data):
     """
     Count countries. E.g.
-    [{country: 'US}, {country: 'US}, {country: 'Canada'} ->
+    [{country: 'US', 'foo': 42}, {country: 'US', 'bar': 99}, {country: 'Canada'}] ->
     [('US', 2), ('Canada', 1)]
     :param data: iterable of university records
     :return: list of (country, number) tuples where number
@@ -33,6 +33,7 @@ def count_countries(data):
         in the 'country' key
         sorted by number, largest first
     """
+
     # TODO: finish
     return []
 
@@ -46,7 +47,7 @@ def print_university(rank, university):
     """
 
     message = "{rank} {univ}, {country}: teaching: {teach}, international: " \
-              "{intern}, research: {res} Fem./Male: {mf}"
+              "{intern}, research: {res} Grad/Undergrad: {gug}"
 
     rank = str(rank).zfill(2)
 
@@ -54,7 +55,7 @@ def print_university(rank, university):
                          teach=university['teaching_score'],
                          intern=university['international_score'],
                          res=university['research_score'],
-                         mf=university['female_male_ratio'],
+                         gug=university['grad_undergrad_ratio'],
                          country=university['country'],
                          rank=rank))
 
@@ -86,56 +87,59 @@ def prompt_for_preferred_country(country_count_items):
     return country
 
 
-def more_males(female_male_ratio_string):
+def more_grads(grad_undergrad_ratio_string):
     """
-    Take a female_to_male_ratio string and return
-    True if there are more males. Return False otherwise.
-    E.g. '50:49:01' -> False, '49:50:01' -> True
-    Return True if the string is empty or otherwise unparsable
+    Take a grad_undergrad_ratio string and return
+    True if there are more grad students than undergraduates.
+    Return False otherwise.
+    E.g. '50:49:01' -> True, '49:50:01' -> False
+    Return True if the string is empty or otherwise un-parsable
 
     The strings look like
-    :param female_male_ratio_string:
+    :param grad_undergrad_ratio_string:
+        The meaning of the string is grad_percent, undergrad_percent, other_percent
+        colon separated
     :return:
     """
-    res = female_male_ratio_string.split(':')
+    res = grad_undergrad_ratio_string.split(':')
 
     if len(res) >= 2:
-        male = res[0]
-        female = res[1]
+        grad = res[0]
+        undergrad = res[1]
     else:
         return True
 
     try:
-        if int(male) > int(female):
+        if int(grad) > int(undergrad):
             return True
         else:
             return False
 
     except ValueError:
-        print('error converting ratio: ', female_male_ratio)
+        print('\tError converting ratio: %s' % grad_undergrad_ratio_string)
         return True
 
 
-def filter_based_on_gender_stats(universities):
+def filter_based_on_grad_undergrad_stats(universities):
     """
     Filter the list of university records depending on
-        the gender statistics
+        the grad/undergrad statistics
     :param universities: list of university records
     :return: filtered list
     """
-    message = "Prefer: More males [0], More females [1] or Don't Care [2]\n"
+    message = "Prefer: More grad students [0], More undergrads [1] or Don't Care [2]\n"
     index = int(input(message))
 
     # default if do not care
     univ = [u for u in universities]
 
     if index == 0:
-        # for more males choice
-        univ = [u for u in universities if more_males(u['female_male_ratio'])]
+        # for more grad choice
+        univ = [u for u in universities if more_grads(u['grad_undergrad_ratio'])]
 
     if index == 1:
-        # for more females choice
-        univ = [u for u in universities if not more_males(u['female_male_ratio'])]
+        # for more undergrad choice
+        univ = [u for u in universities if not more_grads(u['grad_undergrad_ratio'])]
 
     return univ
 
@@ -188,8 +192,8 @@ def main():
     # filter for the Universities being in the preferred country
     universities = [i for i in data if i['country'] == country]
 
-    # Chose whether you prefer more males or females or do not care
-    univ = filter_based_on_gender_stats(universities)
+    # Chose whether you prefer more grad students or undergrads or do not care
+    univ = filter_based_on_grad_undergrad_stats(universities)
 
     # Choose how to rank them. Prompt for choice between
     # teaching, international or research

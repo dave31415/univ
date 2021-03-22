@@ -1,4 +1,4 @@
-university_name,country,teaching_score,international_score,research_score,female_male_ratio
+university_name,country,teaching_score,international_score,research_score,grad_undergrad_ratio
 Harvard University,United States of America,99.7,72.4,98.7,
 California Institute of Technology,United States of America,97.7,54.6,98,33 : 67
 Massachusetts Institute of Technology,United States of America,97.8,82.3,91.4,37 : 63
