@@ -15,11 +15,7 @@ def read_university():
 
     filename = "university_data.csv"
 
-    # TODO: remove duplicates, keep the first
-
-    for row in DictReader(open(filename, 'r')):
-        name = row['university_name']
-
+    for row in DictReader(open(filename, 'r'))
         if row['country'] == 'United States of America':
             row['country'] = 'US'
 
