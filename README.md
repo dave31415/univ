@@ -1,4 +1,4 @@
-# The coding problem program
+# The program: university selection
 
 This command line program in university_finished.py helps the user choose
 a university.
@@ -14,7 +14,7 @@ teaching, international, or research.
 
 Finally, it prints out the filtered list, ranked in that way. 
 
-The Problem
+The problem for the candidate
 ------------
 The version university_finished.py is a finished working version. The one 
 given to the candidate is university_incomplete.py. There are a few 
