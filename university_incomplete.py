@@ -15,20 +15,15 @@ def read_university():
 
     filename = "university_data.csv"
 
-    # remove duplicates, keep the first
-    lookup = set()
+    # TODO: remove duplicates, keep the first
+
     for row in DictReader(open(filename, 'r')):
         name = row['university_name']
 
         if row['country'] == 'United States of America':
             row['country'] = 'US'
 
-        if name in lookup:
-            # duplicate, skip
-            pass
-        else:
-            lookup.add(name)
-            yield row
+        yield row
 
 
 def count_countries(data):
@@ -42,14 +37,8 @@ def count_countries(data):
         in the 'country' key
         sorted by number, largest first
     """
-
-    count = Counter()
-    for row in data:
-        count[row['country']] += 1
-
-    items = sorted(count.most_common(), key=lambda x: -x[1])
-
-    return items
+    # TODO: finish
+    return []
 
 
 def print_university(rank, university):
@@ -183,7 +172,8 @@ def sort_by_chosen_score(univ, chosen_score):
     :param chosen_score: the chosen score to rank by
     :return: sorted list
     """
-    return sorted(univ, key=lambda x: -float(x[chosen_score]))
+    # TODO: finish
+    return []
 
 
 def main():
