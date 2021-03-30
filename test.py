@@ -1,4 +1,4 @@
-from university_finished import count_countries, sort_by_chosen_score
+from university_incomplete import count_countries, sort_by_chosen_score
 import unittest
 
 
