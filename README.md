@@ -4,7 +4,7 @@ This command line program in university_finished.py helps the user choose
 a university.
 
 It first shows them a count of universities by country 
-and asks them to choose a country.
+and then asks them to choose a country.
 
 Then it asks them whether they prefer a university with more
 graduate students or more undergraduates or do not care.
