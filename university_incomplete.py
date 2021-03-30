@@ -15,11 +15,20 @@ def read_university():
 
     filename = "university_data.csv"
 
+    # remove duplicates, keep the first
+    lookup = set()
     for row in DictReader(open(filename, 'r')):
+        name = row['university_name']
+
         if row['country'] == 'United States of America':
             row['country'] = 'US'
 
-        yield row
+        if name in lookup:
+            # duplicate, skip
+            pass
+        else:
+            lookup.add(name)
+            yield row
 
 
 def count_countries(data):
@@ -67,6 +76,8 @@ def prompt_for_preferred_country(country_count_items):
         output of count_countries
     :return: country name
     """
+    assert len(country_count_items) > 0
+
     # Choose the country you prefer
     message = "Choose a country: "
 
