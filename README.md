@@ -25,3 +25,5 @@ the program run.
 The code runs in any Python 3 as well as Python 2.7 and does not use and 
 does not need any libraries. The candidate should not use any libraries 
 except perhaps those in the builtin python standard lib.
+
+![Screenshot](./screenshot.png)
