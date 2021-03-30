@@ -1,5 +1,5 @@
 """
-A finished and working version of the program
+A not-quite finished version
 """
 
 
