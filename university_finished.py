@@ -15,7 +15,6 @@ def read_university():
 
     filename = "university_data.csv"
 
-    # remove duplicates, keep the first
     lookup = set()
     for row in DictReader(open(filename, 'r')):
         name = row['university_name']
@@ -23,10 +22,8 @@ def read_university():
         if row['country'] == 'United States of America':
             row['country'] = 'US'
 
-        if name in lookup:
-            # duplicate, skip
-            pass
-        else:
+        # remove duplicates by keeping only the first
+        if name not in lookup:
             lookup.add(name)
             yield row
 
@@ -81,6 +78,8 @@ def prompt_for_preferred_country(country_count_items):
         output of count_countries
     :return: country name
     """
+    assert len(country_count_items) > 0
+
     # Choose the country you prefer
     message = "Choose a country: "
 
@@ -206,18 +205,18 @@ def main():
     universities = [i for i in data if i['country'] == country]
 
     # Chose whether you prefer more grad students or undergrads or do not care
-    univ = filter_based_on_grad_undergrad_stats(universities)
+    univ_list = filter_based_on_grad_undergrad_stats(universities)
 
     # Choose how to rank them. Prompt for choice between
     # teaching, international or research
     chosen_score = prompt_for_chosen_score()
-    univ_sorted = sort_by_chosen_score(univ, chosen_score)
+    univ_list_sorted = sort_by_chosen_score(univ_list, chosen_score)
 
     # Print them out, filtered and ranked in this way
 
     print('\nTop Universities\n-------------------')
 
-    for rank, u in enumerate(univ_sorted):
+    for rank, u in enumerate(univ_list_sorted):
         print_university(rank + 1, u)
 
 
