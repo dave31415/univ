@@ -59,11 +59,12 @@ Things to look for:
 
 * Did they manage to download it and get started quickly?
 
-* Did they use an IDE like Pycharm?
+* Did they use an IDE like Pycharm that helps them navigate code efficiently?
 
 * Are they familiar with the Python syntax or do they have to Google it?
 
-* Did they notice the tests and, better yet, actually try to run them and see 
+* Did they notice the tests? Did they recognize their significance once we 
+direct them to them? Better yet, actually try to run them and see 
 why that is helpful?
 
 * Observe how they mentally process the code. See how long it takes for them to 
@@ -71,17 +72,15 @@ notice the two missing functions and realize they need to be implemented.
 
 * How do they go about writing the count_countries function? It's a positive if they
 are familiar with the "Counter" object from the collections library but it's not 
-required.
+required. Regardless, they should quickly write a function that counts. 
 
 * If they finish this function, how do they test it? Have they noticed the test 
 program by now? Did they run it? Do they at least test it in the python shell?
 
-* The other function sort_by_chosen_score should basically be a one-liner. 
+* The other function sort_by_chosen_score should basically be a one-liner. If they
+have time to get to it, they should complete it quickly.
 
 * After writing these two functions, can they get the program to run?
-
-* Do they notice the duplicate universities? If so, do they know how to go about
-fixing it in some reasonable way? Do they actually fix it in the allotted time?
 
 * We will expect that they complete at least one of the functions and 
 therefore pass one of the two tests in 20 min max. That would be enough info
